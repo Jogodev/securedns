@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load custom_tags %}
+{% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="col-md-8 col-lg-6">
+        <div>
+            <form method="post">
+                <div class="input-group mb-3">
+                    {{ form.dns }}
+                    <button type="submit" class="btn btn-primary home_form_button">Rechercher
+                    </button>
+                </div>
+            </form>
+            {% if form.errors %}
+            <div class="mt-3 text-danger text-center">
+                {{ form.errors }}
+            </div>
+            {% endif %}
+        </div>
+        <div class="text-center">
+            <a class="small d-block" href="{% url 'signup' %}">Create an Account!</a>
+            <a class="small d-block" href="{% url 'login' %}">Already have an account? Login!</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
