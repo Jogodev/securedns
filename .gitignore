@@ -1,0 +1,17 @@
+# IDE
+.vscode
+.idea
+.DS_Store
+
+#ENV
+.env
+myenv
+venv
+env
+
+#
+__pycache__
+
+#unit test
+
+htmlcov/
