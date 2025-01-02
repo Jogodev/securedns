@@ -14,9 +14,11 @@
                         <div class="text-center">
                             <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                         </div>
-                        <form class="user">
+                        <form action="" method="post" class="user">
+                            
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
+                                    {% csrf_token %}
                                     {{ form.first_name }}
                                 </div>
                                 <div class="col-sm-6">

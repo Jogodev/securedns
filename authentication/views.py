@@ -11,10 +11,10 @@ def signup(request):
     if request.method == 'POST':
         form = forms.SignUpForm(request.POST)
         if form.is_valid():
-            user =form.save()
+            user = form.save()
             login(request, user)
             return redirect(settings.LOGIN_REDIRECT_URL)
-    return render(request, "authentication/signup.html", context={"form": form})    
+    return render(request, "authentication/signup.html", context={"form": form})   
 
 
 def login(request):
@@ -30,7 +30,7 @@ def login(request):
             if user is not None:
                 login(request, user)
                 messages.success(request, f"Bonjour {user.first_name}")
-                return redirect("login")
+                return redirect(settings.LOGIN_REDIRECT_URL)
             else: 
                 message = "Identifiants invalides."
     return render(

@@ -19,12 +19,12 @@ class LoginForm(AuthenticationForm):
         }))
     
 class SignUpForm(UserCreationForm):
-    first_name = forms.CharField(max_length=63, label="Prénom", widget=forms.PasswordInput(attrs={
+    first_name = forms.CharField(max_length=63, label="Prénom", widget=forms.TextInput(attrs={
             "class": "form-control form-control-user",
             "id": "exampleLastName",
             "placeholder": "First Name"
         }))
-    last_name = forms.CharField(max_length=63, label="Nom", widget=forms.PasswordInput(attrs={
+    last_name = forms.CharField(max_length=63, label="Nom", widget=forms.TextInput(attrs={
             "class": "form-control form-control-user",
             "id": "exampleLastName",
             "placeholder": "Last Name"

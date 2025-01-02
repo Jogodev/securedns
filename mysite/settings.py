@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'authentication',
     'account',
     'api',
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -147,7 +148,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Auth
 AUTH_USER_MODEL = 'authentication.User'
-#LOGIN_REDIRECT_URL = 'home'
+
+LOGIN_REDIRECT_URL = 'dashboard'
 
 #media
 MEDIA_URL = '/media/'
