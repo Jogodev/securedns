@@ -7,3 +7,5 @@ sudo export HOST="*"
 sudo  python3 -m pip install python-dotenv
 
 sudo apt install python3-djangorestframework
+
+#test222
