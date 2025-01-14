@@ -1,4 +1,4 @@
-sudo export DJANGO_SECRET_KEY=*'
+sudo export DJANGO_SECRET_KEY="*"
 
 sudo export DEBUG=True
 
