@@ -47,6 +47,9 @@ def home(request):
     if request.method == 'POST':
         form = forms.HomeForm(request.POST)
         if form.is_valid():
-            pass
+            domain = form.cleaned_data['domain']
+            
+
+            
             # faire un appel pour verifier la dispo du dns dans notre base
     return render(request, "authentication/home.html", context={'form': form})

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'account',
     'api',
     'import_export',
+    'dns',
 ]
 
 MIDDLEWARE = [
