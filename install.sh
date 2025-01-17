@@ -8,4 +8,4 @@ sudo  python3 -m pip install python-dotenv
 
 sudo apt install python3-djangorestframework
 
-#test222
+ sudo apt install python3-django-import-export
