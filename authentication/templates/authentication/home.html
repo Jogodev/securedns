@@ -6,6 +6,7 @@
         <div>
             <form method="post">
                 <div class="input-group mb-3">
+                    {% csrf_token %}
                     {{ form.dns }}
                     <button type="submit" class="btn btn-primary home_form_button">Rechercher
                     </button>
@@ -20,6 +21,20 @@
         <div class="text-center">
             <a class="small d-block" href="{% url 'authentication:signup' %}">Create an Account!</a>
             <a class="small d-block" href="{% url 'authentication:login' %}">Already have an account? Login!</a>
+        </div>
+        <div>
+            {%if domains %}
+            <p class="mt-4">Suggestions pour "{{ form.cleaned_data.dns }}":</p>
+                {% for domain in domains %}
+                    <li>
+                        {{ domain.name }}
+                        (score : {{ domain.score }})
+                    
+                    <li>    
+                {% endfor %}
+            {%else%}
+                <p>Aucun domaine trouvé</p>
+            {%endif%}
         </div>
     </div>
 </div>

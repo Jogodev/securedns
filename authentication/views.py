@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.contrib import messages
+from .utils import get_domain
 
 from . import forms
 
@@ -44,12 +45,10 @@ def logout_user(request):
 
 def home(request):
     form = forms.HomeForm()
+    domains = []
     if request.method == 'POST':
         form = forms.HomeForm(request.POST)
         if form.is_valid():
-            domain = form.cleaned_data['domain']
-            
-
-            
-            # faire un appel pour verifier la dispo du dns dans notre base
-    return render(request, "authentication/home.html", context={'form': form})
+            domain = form.cleaned_data['dns']
+            domains = get_domain(domain)
+    return render(request, "authentication/home.html", context={'form': form, 'domains': domains})
